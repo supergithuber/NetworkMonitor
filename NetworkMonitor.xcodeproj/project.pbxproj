@@ -13,6 +13,7 @@
 		C710DFF320F0BF3B005D1DAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C710DFF220F0BF3B005D1DAD /* Assets.xcassets */; };
 		C710DFF620F0BF3B005D1DAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C710DFF420F0BF3B005D1DAD /* LaunchScreen.storyboard */; };
 		C710DFF920F0BF3B005D1DAD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C710DFF820F0BF3B005D1DAD /* main.m */; };
+		C710E00220F0C025005D1DAD /* WXNetworkMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C710E00120F0C025005D1DAD /* WXNetworkMonitor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		C710DFF520F0BF3B005D1DAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C710DFF720F0BF3B005D1DAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C710DFF820F0BF3B005D1DAD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C710E00020F0C025005D1DAD /* WXNetworkMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXNetworkMonitor.h; sourceTree = "<group>"; };
+		C710E00120F0C025005D1DAD /* WXNetworkMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXNetworkMonitor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 		C710DFE820F0BF3A005D1DAD /* NetworkMonitor */ = {
 			isa = PBXGroup;
 			children = (
+				C710DFFF20F0BFA7005D1DAD /* Monitor */,
 				C710DFE920F0BF3A005D1DAD /* AppDelegate.h */,
 				C710DFEA20F0BF3A005D1DAD /* AppDelegate.m */,
 				C710DFEC20F0BF3A005D1DAD /* ViewController.h */,
@@ -69,6 +73,15 @@
 				C710DFF820F0BF3B005D1DAD /* main.m */,
 			);
 			path = NetworkMonitor;
+			sourceTree = "<group>";
+		};
+		C710DFFF20F0BFA7005D1DAD /* Monitor */ = {
+			isa = PBXGroup;
+			children = (
+				C710E00020F0C025005D1DAD /* WXNetworkMonitor.h */,
+				C710E00120F0C025005D1DAD /* WXNetworkMonitor.m */,
+			);
+			path = Monitor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +156,7 @@
 			files = (
 				C710DFEE20F0BF3A005D1DAD /* ViewController.m in Sources */,
 				C710DFF920F0BF3B005D1DAD /* main.m in Sources */,
+				C710E00220F0C025005D1DAD /* WXNetworkMonitor.m in Sources */,
 				C710DFEB20F0BF3A005D1DAD /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
