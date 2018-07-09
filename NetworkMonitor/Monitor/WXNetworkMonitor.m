@@ -12,6 +12,8 @@
 #include <net/if.h>
 #include <net/if_dl.h>
 
+static NSString *const WXNetworkInBlockKey = @"wx.inblockKey";
+static NSString *const WXNetworkOutBlockKey = @"wx.outblockKey";
 
 @interface WXNetworkMonitor(){
     uint32_t _inBytes;
@@ -64,12 +66,84 @@ static WXNetworkMonitor* singleton = nil;
     return self;
 }
 
-- (void)startMonitor {
+- (void)startMonitorWithInblock:(WXNetworkBlock)inBlock outBlock:(WXNetworkBlock)outBlock {
+    if (!_timer){
+        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+        [dict setObject:[inBlock copy] forKey:WXNetworkInBlockKey];
+        [dict setObject:[outBlock copy] forKey:WXNetworkOutBlockKey];
+        _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(getNetworkSpeed:) userInfo:dict repeats:YES];
+        [_timer fire];
+    }
+}
+
+- (void)getNetworkSpeed:(NSTimer *)timer{
+    struct ifaddrs *ifa_list = 0, *ifa;
+    if (getifaddrs(&ifa_list) == -1) {  //获取网络接口信息
+        return;
+    }
+    uint32_t inBytes = 0;
+    uint32_t outBytes = 0;
+    uint32_t allBytes = 0;
+    uint32_t wifiInBytes = 0;
+    uint32_t wifiOutBytes = 0;
+    uint32_t wifiFlow = 0;
+    uint32_t wwanInBytes = 0;
+    uint32_t wwanOutBytes = 0;
+    uint32_t wwanFlow = 0;
     
+    WXNetworkBlock inBlock = [[timer userInfo]objectForKey:WXNetworkInBlockKey];
+    WXNetworkBlock outBlock = [[timer userInfo]objectForKey:WXNetworkOutBlockKey];
+    
+    for (ifa = ifa_list; ifa; ifa = ifa->ifa_next) {
+        if (AF_LINK != ifa->ifa_addr->sa_family)
+            continue;
+        if (!(ifa->ifa_flags & IFF_UP) && !(ifa->ifa_flags & IFF_RUNNING))
+            continue;
+        if (ifa->ifa_data == 0)
+            continue;
+        //network
+        if (strncmp(ifa->ifa_name, "lo", 2)){
+            struct if_data* if_data = (struct if_data*)ifa->ifa_data;
+            inBytes += if_data->ifi_ibytes;
+            outBytes += if_data->ifi_obytes;
+            allBytes = inBytes + outBytes;
+        }
+        //wifi
+        if (!strcmp(ifa->ifa_name, "en0")) {
+            struct if_data* if_data = (struct if_data*)ifa->ifa_data;
+            wifiInBytes += if_data->ifi_ibytes;
+            wifiOutBytes += if_data->ifi_obytes;
+            wifiFlow = wifiInBytes + wifiOutBytes;
+        }
+        //wan
+        if (!strcmp(ifa->ifa_name, "pdp_ip0")) {
+            struct if_data* if_data = (struct if_data*)ifa->ifa_data;
+            wwanInBytes += if_data->ifi_ibytes;
+            wwanOutBytes += if_data->ifi_obytes;
+            wwanFlow = wwanInBytes + wwanOutBytes;
+
+        }
+    }
+    freeifaddrs(ifa_list);
+    if (_inBytes != 0) {
+        if (inBlock){
+            inBlock(_inBytes);
+        }
+    }
+    _inBytes = inBytes;
+    if (_outBytes != 0) {
+        if (outBlock){
+            outBlock(_outBytes);
+        }
+    }
+    _outBytes = outBytes;
 }
 
 - (void)stopMonitor {
-    
+    if ([self.timer isValid]){
+        [self.timer invalidate];
+        self.timer = nil;
+    }
 }
 
 @end
