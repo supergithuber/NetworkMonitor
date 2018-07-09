@@ -19,14 +19,6 @@ static NSString *const WXNetworkOutBlockKey = @"wx.outblockKey";
     uint32_t _inBytes;
     uint32_t _outBytes;
     uint32_t _allBytes;
-    
-    uint32_t _inWifiBytes;
-    uint32_t _outWifiBytes;
-    uint32_t _allWifiBytes;
-    
-    uint32_t _inWanBytes;
-    uint32_t _outWanBytes;
-    uint32_t _allWanBytes;
 }
 
 @property (nonatomic, strong)NSTimer *timer;
@@ -61,7 +53,7 @@ static WXNetworkMonitor* singleton = nil;
 
 - (instancetype)init{
     if (self = [super init]){
-        _inBytes = _outBytes = _allBytes = _inWifiBytes = _outWifiBytes = _allWifiBytes = _inWanBytes = _outWanBytes = _allWanBytes = 0;
+        _inBytes = _outBytes = _allBytes = 0;
     }
     return self;
 }
@@ -84,12 +76,6 @@ static WXNetworkMonitor* singleton = nil;
     uint32_t inBytes = 0;
     uint32_t outBytes = 0;
     uint32_t allBytes = 0;
-    uint32_t wifiInBytes = 0;
-    uint32_t wifiOutBytes = 0;
-    uint32_t wifiFlow = 0;
-    uint32_t wwanInBytes = 0;
-    uint32_t wwanOutBytes = 0;
-    uint32_t wwanFlow = 0;
     
     WXNetworkBlock inBlock = [[timer userInfo]objectForKey:WXNetworkInBlockKey];
     WXNetworkBlock outBlock = [[timer userInfo]objectForKey:WXNetworkOutBlockKey];
@@ -108,32 +94,18 @@ static WXNetworkMonitor* singleton = nil;
             outBytes += if_data->ifi_obytes;
             allBytes = inBytes + outBytes;
         }
-        //wifi
-        if (!strcmp(ifa->ifa_name, "en0")) {
-            struct if_data* if_data = (struct if_data*)ifa->ifa_data;
-            wifiInBytes += if_data->ifi_ibytes;
-            wifiOutBytes += if_data->ifi_obytes;
-            wifiFlow = wifiInBytes + wifiOutBytes;
-        }
-        //wan
-        if (!strcmp(ifa->ifa_name, "pdp_ip0")) {
-            struct if_data* if_data = (struct if_data*)ifa->ifa_data;
-            wwanInBytes += if_data->ifi_ibytes;
-            wwanOutBytes += if_data->ifi_obytes;
-            wwanFlow = wwanInBytes + wwanOutBytes;
-
-        }
     }
     freeifaddrs(ifa_list);
     if (_inBytes != 0) {
         if (inBlock){
-            inBlock(_inBytes);
+            inBlock(inBytes - _inBytes);
         }
     }
+    
     _inBytes = inBytes;
     if (_outBytes != 0) {
         if (outBlock){
-            outBlock(_outBytes);
+            outBlock(outBytes - _outBytes);
         }
     }
     _outBytes = outBytes;
