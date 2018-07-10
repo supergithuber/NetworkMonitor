@@ -16,5 +16,5 @@ transform units according to you.
 #### carthage 
 
 ```
-github "supergithuber/NetworkMonitor" == 0.7.0
+github "supergithuber/NetworkMonitor" ~> 0.7.5
 ```

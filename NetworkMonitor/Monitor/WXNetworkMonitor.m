@@ -69,7 +69,7 @@ static WXNetworkMonitor* singleton = nil;
         NSMutableDictionary *dict = [NSMutableDictionary dictionary];
         [dict setObject:[inBlock copy] forKey:WXNetworkInBlockKey];
         [dict setObject:[outBlock copy] forKey:WXNetworkOutBlockKey];
-        _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(getNetworkSpeed:) userInfo:dict repeats:YES];
+        _timer = [NSTimer scheduledTimerWithTimeInterval:self.timeInterval target:self selector:@selector(getNetworkSpeed:) userInfo:dict repeats:YES];
         [_timer fire];
     }
 }
@@ -145,6 +145,14 @@ static WXNetworkMonitor* singleton = nil;
         [self.timer invalidate];
         self.timer = nil;
     }
+}
+
+//timerInterval
+- (NSTimeInterval)timeInterval{
+    if (_timeInterval < 1){
+        _timeInterval = 1;
+    }
+    return _timeInterval;
 }
 
 @end
