@@ -124,7 +124,7 @@ static WXNetworkMonitor* singleton = nil;
     freeifaddrs(ifa_list);
     if (_inBytes != 0) {
         if (inBlock){
-            inBlock(inBytes - _inBytes, wifiInBytes - _wifiInBytes, wwanInBytes - _wwanInBytes);
+            inBlock((inBytes - _inBytes)/self.timeInterval, (wifiInBytes - _wifiInBytes)/self.timeInterval, (wwanInBytes - _wwanInBytes)/self.timeInterval);
         }
     }
     _inBytes = inBytes;
@@ -132,7 +132,7 @@ static WXNetworkMonitor* singleton = nil;
     _wwanInBytes = wwanInBytes;
     if (_outBytes != 0) {
         if (outBlock){
-            outBlock(outBytes - _outBytes, wifiOutBytes - _wifiOutBytes, wwanOutBytes - _wwanOutBytes);
+            outBlock((outBytes - _outBytes)/self.timeInterval, (wifiOutBytes - _wifiOutBytes)/self.timeInterval, (wwanOutBytes - _wwanOutBytes)/self.timeInterval);
         }
     }
     _outBytes = outBytes;
