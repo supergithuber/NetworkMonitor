@@ -18,3 +18,11 @@ transform units according to you.
 ```
 github "supergithuber/NetworkMonitor" ~> 0.7.6
 ```
+
+#### Manual
+
+* drag WXNetworkMonitor.h & WXNetworkMonitor.m two files to your project.
+
+or
+
+* drag framework NetworkCardMonitor.framework to your project
