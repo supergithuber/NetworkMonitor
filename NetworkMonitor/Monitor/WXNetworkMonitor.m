@@ -19,6 +19,12 @@ static NSString *const WXNetworkOutBlockKey = @"wx.outblockKey";
     uint32_t _inBytes;
     uint32_t _outBytes;
     uint32_t _allBytes;
+    uint32_t _wifiInBytes;
+    uint32_t _wifiOutBytes;
+    uint32_t _wifiAllBytes;
+    uint32_t _wwanInBytes;
+    uint32_t _wwanOutBytes;
+    uint32_t _wwanAllBytes;
 }
 
 @property (nonatomic, strong)NSTimer *timer;
@@ -53,7 +59,7 @@ static WXNetworkMonitor* singleton = nil;
 
 - (instancetype)init{
     if (self = [super init]){
-        _inBytes = _outBytes = _allBytes = 0;
+        _inBytes = _outBytes = _allBytes = _wifiInBytes = _wifiOutBytes = _wifiAllBytes = _wwanInBytes = _wwanOutBytes = _wwanAllBytes = 0;
     }
     return self;
 }
@@ -76,6 +82,12 @@ static WXNetworkMonitor* singleton = nil;
     uint32_t inBytes = 0;
     uint32_t outBytes = 0;
     uint32_t allBytes = 0;
+    uint32_t wifiInBytes = 0;
+    uint32_t wifiOutBytes = 0;
+    uint32_t wifiAllBytes = 0;
+    uint32_t wwanInBytes = 0;
+    uint32_t wwanOutBytes = 0;
+    uint32_t wwanAllBytes = 0;
     
     WXNetworkBlock inBlock = [[timer userInfo]objectForKey:WXNetworkInBlockKey];
     WXNetworkBlock outBlock = [[timer userInfo]objectForKey:WXNetworkOutBlockKey];
@@ -94,21 +106,38 @@ static WXNetworkMonitor* singleton = nil;
             outBytes += if_data->ifi_obytes;
             allBytes = inBytes + outBytes;
         }
+        //wifi
+        if (!strcmp(ifa->ifa_name, "en0")) {
+            struct if_data* if_data = (struct if_data*)ifa->ifa_data;
+            wifiInBytes += if_data->ifi_ibytes;
+            wifiOutBytes += if_data->ifi_obytes;
+            wifiAllBytes = wifiInBytes + wifiOutBytes;
+        }
+        //3G or gprs
+        if (!strcmp(ifa->ifa_name, "pdp_ip0")) {
+            struct if_data* if_data = (struct if_data*)ifa->ifa_data;
+            wwanInBytes += if_data->ifi_ibytes;
+            wwanOutBytes += if_data->ifi_obytes;
+            wwanAllBytes = wwanInBytes + wwanOutBytes;
+        }
     }
     freeifaddrs(ifa_list);
     if (_inBytes != 0) {
         if (inBlock){
-            inBlock(inBytes - _inBytes);
+            inBlock(inBytes - _inBytes, wifiInBytes - _wifiInBytes, wwanInBytes - _wwanInBytes);
         }
     }
-    
     _inBytes = inBytes;
+    _wifiInBytes = wifiInBytes;
+    _wwanInBytes = wwanInBytes;
     if (_outBytes != 0) {
         if (outBlock){
-            outBlock(outBytes - _outBytes);
+            outBlock(outBytes - _outBytes, wifiOutBytes - _wifiOutBytes, wwanOutBytes - _wwanOutBytes);
         }
     }
     _outBytes = outBytes;
+    _wifiOutBytes = wwanOutBytes;
+    _wwanOutBytes = wwanOutBytes;
 }
 
 - (void)stopMonitor {
