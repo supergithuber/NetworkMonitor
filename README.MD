@@ -1,4 +1,4 @@
-## NetworkMonitor
+## iOSDeviceMonitor
 
 ### Usage
 
@@ -40,12 +40,12 @@ transform units according to you.
 ### carthage 
 
 ```
-github "supergithuber/NetworkMonitor" ~> 0.8.0
+github "supergithuber/iOSDeviceMonitor" ~> 0.8.0
 ```
 
 ### Manual
 
-* drag WXNetworkMonitor.h & WXNetworkMonitor.m two files to your project.
+* drag folder Monitor files to your project.
 
 or
 
