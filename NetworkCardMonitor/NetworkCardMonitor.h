@@ -18,3 +18,4 @@ FOUNDATION_EXPORT const unsigned char NetworkCardMonitorVersionString[];
 
 #import <NetworkCardMonitor/WXNetworkMonitor.h>
 #import <NetworkCardMonitor/WXFPSMonitor.h>
+#import <NetworkCardMonitor/WXCPUMemoryMonitor.h>
