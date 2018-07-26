@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "NetworkCardMonitor.h"
+#import "iOSMonitor.h"
 
 @interface ViewController ()
 

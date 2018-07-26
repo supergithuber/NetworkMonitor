@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C70ECA7420F30793009448A4"
-               BuildableName = "NetworkCardMonitor.framework"
-               BlueprintName = "NetworkCardMonitor"
-               ReferencedContainer = "container:NetworkMonitor.xcodeproj">
+               BuildableName = "iOSMonitor.framework"
+               BlueprintName = "iOSMonitor"
+               ReferencedContainer = "container:iOSDeivceMonitor.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,9 +46,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C70ECA7420F30793009448A4"
-            BuildableName = "NetworkCardMonitor.framework"
-            BlueprintName = "NetworkCardMonitor"
-            ReferencedContainer = "container:NetworkMonitor.xcodeproj">
+            BuildableName = "iOSMonitor.framework"
+            BlueprintName = "iOSMonitor"
+            ReferencedContainer = "container:iOSDeivceMonitor.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -64,9 +64,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C70ECA7420F30793009448A4"
-            BuildableName = "NetworkCardMonitor.framework"
-            BlueprintName = "NetworkCardMonitor"
-            ReferencedContainer = "container:NetworkMonitor.xcodeproj">
+            BuildableName = "iOSMonitor.framework"
+            BlueprintName = "iOSMonitor"
+            ReferencedContainer = "container:iOSDeivceMonitor.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

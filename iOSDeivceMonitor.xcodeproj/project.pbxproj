@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C70ECA7920F30794009448A4 /* NetworkCardMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = C70ECA7720F30793009448A4 /* NetworkCardMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C70ECA7D20F30794009448A4 /* NetworkCardMonitor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C70ECA7520F30793009448A4 /* NetworkCardMonitor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C70ECA7920F30794009448A4 /* iOSMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = C70ECA7720F30793009448A4 /* iOSMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C70ECA7D20F30794009448A4 /* iOSMonitor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C70ECA7520F30793009448A4 /* iOSMonitor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C70ECA8220F3080F009448A4 /* WXNetworkMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C710E00120F0C025005D1DAD /* WXNetworkMonitor.m */; };
 		C710DFEB20F0BF3A005D1DAD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C710DFEA20F0BF3A005D1DAD /* AppDelegate.m */; };
 		C710DFEE20F0BF3A005D1DAD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C710DFED20F0BF3A005D1DAD /* ViewController.m */; };
@@ -43,7 +43,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C70ECA7D20F30794009448A4 /* NetworkCardMonitor.framework in Embed Frameworks */,
+				C70ECA7D20F30794009448A4 /* iOSMonitor.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,10 +51,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C70ECA7520F30793009448A4 /* NetworkCardMonitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkCardMonitor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C70ECA7720F30793009448A4 /* NetworkCardMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkCardMonitor.h; sourceTree = "<group>"; };
+		C70ECA7520F30793009448A4 /* iOSMonitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iOSMonitor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C70ECA7720F30793009448A4 /* iOSMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOSMonitor.h; sourceTree = "<group>"; };
 		C70ECA7820F30794009448A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C710DFE620F0BF3A005D1DAD /* NetworkMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C710DFE620F0BF3A005D1DAD /* iOSDeivceMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSDeivceMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C710DFE920F0BF3A005D1DAD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C710DFEA20F0BF3A005D1DAD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C710DFEC20F0BF3A005D1DAD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -90,20 +90,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C70ECA7620F30793009448A4 /* NetworkCardMonitor */ = {
+		C70ECA7620F30793009448A4 /* iOSMonitor */ = {
 			isa = PBXGroup;
 			children = (
-				C70ECA7720F30793009448A4 /* NetworkCardMonitor.h */,
+				C70ECA7720F30793009448A4 /* iOSMonitor.h */,
 				C70ECA7820F30794009448A4 /* Info.plist */,
 			);
-			path = NetworkCardMonitor;
+			path = iOSMonitor;
 			sourceTree = "<group>";
 		};
 		C710DFDD20F0BF3A005D1DAD = {
 			isa = PBXGroup;
 			children = (
-				C710DFE820F0BF3A005D1DAD /* NetworkMonitor */,
-				C70ECA7620F30793009448A4 /* NetworkCardMonitor */,
+				C710DFE820F0BF3A005D1DAD /* iOSDeviceMonitor */,
+				C70ECA7620F30793009448A4 /* iOSMonitor */,
 				C710DFE720F0BF3A005D1DAD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -111,13 +111,13 @@
 		C710DFE720F0BF3A005D1DAD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C710DFE620F0BF3A005D1DAD /* NetworkMonitor.app */,
-				C70ECA7520F30793009448A4 /* NetworkCardMonitor.framework */,
+				C710DFE620F0BF3A005D1DAD /* iOSDeivceMonitor.app */,
+				C70ECA7520F30793009448A4 /* iOSMonitor.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C710DFE820F0BF3A005D1DAD /* NetworkMonitor */ = {
+		C710DFE820F0BF3A005D1DAD /* iOSDeviceMonitor */ = {
 			isa = PBXGroup;
 			children = (
 				C710DFFF20F0BFA7005D1DAD /* Monitor */,
@@ -131,7 +131,7 @@
 				C710DFF720F0BF3B005D1DAD /* Info.plist */,
 				C710DFF820F0BF3B005D1DAD /* main.m */,
 			);
-			path = NetworkMonitor;
+			path = iOSDeviceMonitor;
 			sourceTree = "<group>";
 		};
 		C710DFFF20F0BFA7005D1DAD /* Monitor */ = {
@@ -156,7 +156,7 @@
 			files = (
 				C71FBB2921097832000000F7 /* WXFPSMonitor.h in Headers */,
 				C71FBB2E2109A09C000000F7 /* WXCPUMemoryMonitor.h in Headers */,
-				C70ECA7920F30794009448A4 /* NetworkCardMonitor.h in Headers */,
+				C70ECA7920F30794009448A4 /* iOSMonitor.h in Headers */,
 				C7D78FB620F30827004C69C3 /* WXNetworkMonitor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,9 +164,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		C70ECA7420F30793009448A4 /* NetworkCardMonitor */ = {
+		C70ECA7420F30793009448A4 /* iOSMonitor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C70ECA8020F30794009448A4 /* Build configuration list for PBXNativeTarget "NetworkCardMonitor" */;
+			buildConfigurationList = C70ECA8020F30794009448A4 /* Build configuration list for PBXNativeTarget "iOSMonitor" */;
 			buildPhases = (
 				C70ECA7020F30793009448A4 /* Sources */,
 				C70ECA7120F30793009448A4 /* Frameworks */,
@@ -177,14 +177,14 @@
 			);
 			dependencies = (
 			);
-			name = NetworkCardMonitor;
+			name = iOSMonitor;
 			productName = NetworkCardMonitor;
-			productReference = C70ECA7520F30793009448A4 /* NetworkCardMonitor.framework */;
+			productReference = C70ECA7520F30793009448A4 /* iOSMonitor.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		C710DFE520F0BF3A005D1DAD /* NetworkMonitor */ = {
+		C710DFE520F0BF3A005D1DAD /* iOSDeivceMonitor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C710DFFC20F0BF3B005D1DAD /* Build configuration list for PBXNativeTarget "NetworkMonitor" */;
+			buildConfigurationList = C710DFFC20F0BF3B005D1DAD /* Build configuration list for PBXNativeTarget "iOSDeivceMonitor" */;
 			buildPhases = (
 				C710DFE220F0BF3A005D1DAD /* Sources */,
 				C710DFE320F0BF3A005D1DAD /* Frameworks */,
@@ -196,9 +196,9 @@
 			dependencies = (
 				C70ECA7B20F30794009448A4 /* PBXTargetDependency */,
 			);
-			name = NetworkMonitor;
+			name = iOSDeivceMonitor;
 			productName = NetworkMonitor;
-			productReference = C710DFE620F0BF3A005D1DAD /* NetworkMonitor.app */;
+			productReference = C710DFE620F0BF3A005D1DAD /* iOSDeivceMonitor.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -218,7 +218,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C710DFE120F0BF3A005D1DAD /* Build configuration list for PBXProject "NetworkMonitor" */;
+			buildConfigurationList = C710DFE120F0BF3A005D1DAD /* Build configuration list for PBXProject "iOSDeivceMonitor" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -231,8 +231,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C710DFE520F0BF3A005D1DAD /* NetworkMonitor */,
-				C70ECA7420F30793009448A4 /* NetworkCardMonitor */,
+				C710DFE520F0BF3A005D1DAD /* iOSDeivceMonitor */,
+				C70ECA7420F30793009448A4 /* iOSMonitor */,
 			);
 		};
 /* End PBXProject section */
@@ -286,7 +286,7 @@
 /* Begin PBXTargetDependency section */
 		C70ECA7B20F30794009448A4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C70ECA7420F30793009448A4 /* NetworkCardMonitor */;
+			target = C70ECA7420F30793009448A4 /* iOSMonitor */;
 			targetProxy = C70ECA7A20F30794009448A4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -322,7 +322,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = NetworkCardMonitor/Info.plist;
+				INFOPLIST_FILE = iOSMonitor/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -330,7 +330,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sivanwu.networkMonitor.NetworkCardMonitor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sivanwu.networkMonitor.iOSMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -350,7 +350,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = NetworkCardMonitor/Info.plist;
+				INFOPLIST_FILE = iOSMonitor/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -358,7 +358,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sivanwu.networkMonitor.NetworkCardMonitor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sivanwu.networkMonitor.iOSMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -483,7 +483,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KYFVDC483X;
-				INFOPLIST_FILE = NetworkMonitor/Info.plist;
+				INFOPLIST_FILE = iOSDeviceMonitor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -500,7 +500,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KYFVDC483X;
-				INFOPLIST_FILE = NetworkMonitor/Info.plist;
+				INFOPLIST_FILE = iOSDeviceMonitor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -514,7 +514,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C70ECA8020F30794009448A4 /* Build configuration list for PBXNativeTarget "NetworkCardMonitor" */ = {
+		C70ECA8020F30794009448A4 /* Build configuration list for PBXNativeTarget "iOSMonitor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C70ECA7E20F30794009448A4 /* Debug */,
@@ -523,7 +523,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C710DFE120F0BF3A005D1DAD /* Build configuration list for PBXProject "NetworkMonitor" */ = {
+		C710DFE120F0BF3A005D1DAD /* Build configuration list for PBXProject "iOSDeivceMonitor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C710DFFA20F0BF3B005D1DAD /* Debug */,
@@ -532,7 +532,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C710DFFC20F0BF3B005D1DAD /* Build configuration list for PBXNativeTarget "NetworkMonitor" */ = {
+		C710DFFC20F0BF3B005D1DAD /* Build configuration list for PBXNativeTarget "iOSDeivceMonitor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C710DFFD20F0BF3B005D1DAD /* Debug */,
