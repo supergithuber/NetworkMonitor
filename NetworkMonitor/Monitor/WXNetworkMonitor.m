@@ -26,7 +26,7 @@ static NSString *const WXNetworkOutBlockKey = @"wx.outblockKey";
     uint32_t _wwanOutBytes;
     uint32_t _wwanAllBytes;
 }
-
+@property (nonatomic, assign)NSTimeInterval timeInterval;
 @property (nonatomic, strong)NSTimer *timer;
 
 @end

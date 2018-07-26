@@ -18,6 +18,7 @@
 		C710DFF620F0BF3B005D1DAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C710DFF420F0BF3B005D1DAD /* LaunchScreen.storyboard */; };
 		C710DFF920F0BF3B005D1DAD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C710DFF820F0BF3B005D1DAD /* main.m */; };
 		C710E00220F0C025005D1DAD /* WXNetworkMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C710E00120F0C025005D1DAD /* WXNetworkMonitor.m */; };
+		C71FBB272109746B000000F7 /* WXFPSMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C71FBB262109746B000000F7 /* WXFPSMonitor.m */; };
 		C7D78FB620F30827004C69C3 /* WXNetworkMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = C710E00020F0C025005D1DAD /* WXNetworkMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,8 @@
 		C710DFF820F0BF3B005D1DAD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C710E00020F0C025005D1DAD /* WXNetworkMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXNetworkMonitor.h; sourceTree = "<group>"; };
 		C710E00120F0C025005D1DAD /* WXNetworkMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXNetworkMonitor.m; sourceTree = "<group>"; };
+		C71FBB252109746B000000F7 /* WXFPSMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXFPSMonitor.h; sourceTree = "<group>"; };
+		C71FBB262109746B000000F7 /* WXFPSMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXFPSMonitor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +134,8 @@
 			children = (
 				C710E00020F0C025005D1DAD /* WXNetworkMonitor.h */,
 				C710E00120F0C025005D1DAD /* WXNetworkMonitor.m */,
+				C71FBB252109746B000000F7 /* WXFPSMonitor.h */,
+				C71FBB262109746B000000F7 /* WXFPSMonitor.m */,
 			);
 			path = Monitor;
 			sourceTree = "<group>";
@@ -259,6 +264,7 @@
 				C710DFEE20F0BF3A005D1DAD /* ViewController.m in Sources */,
 				C710DFF920F0BF3B005D1DAD /* main.m in Sources */,
 				C710E00220F0C025005D1DAD /* WXNetworkMonitor.m in Sources */,
+				C71FBB272109746B000000F7 /* WXFPSMonitor.m in Sources */,
 				C710DFEB20F0BF3A005D1DAD /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
