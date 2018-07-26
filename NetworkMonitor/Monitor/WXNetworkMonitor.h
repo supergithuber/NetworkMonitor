@@ -12,7 +12,7 @@ typedef void(^WXNetworkBlock)(uint32_t allBytes, uint32_t wifiBytes, uint32_t ww
 
 @interface WXNetworkMonitor : NSObject
 
-@property (nonatomic, assign)NSTimeInterval timeInterval;
+//@property (nonatomic, assign)NSTimeInterval timeInterval;
 
 + (instancetype)sharedInstance;
 
