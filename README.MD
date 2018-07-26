@@ -45,7 +45,7 @@ github "supergithuber/iOSDeviceMonitor" ~> 0.8.1
 
 ### Manual
 
-* drag folder Monitor files to your project.
+* drag folder Monitor to your project.
 
 or
 
