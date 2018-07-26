@@ -1,6 +1,8 @@
 ## NetworkMonitor
 
-#### Usage
+### Usage
+
+#### Network
 
 ```objectiveC
 + (instancetype)sharedInstance;
@@ -12,14 +14,36 @@
 block will return 1 time per seconds, unit is bytes/s.
 transform units according to you.
 
+#### FPS
 
-#### carthage 
+```objectiveC
+@property (nonatomic, copy) WXFPSMonitorBlock fpsBlock;
+
++ (instancetype)sharedInstance;
+
+- (void)startMonitor;
+- (void)stopMonitor;
+```
+
+#### CPU and Memory
+
+```objectiveC
+@property (nonatomic, copy)WXMemoryBlock memoryBlock;
+@property (nonatomic, copy)WXCPUBlock cpuBlock;
+
++ (instancetype)sharedInstance;
+
+- (void)startMonitor;
+- (void)stopMonitor;
+```
+
+### carthage 
 
 ```
-github "supergithuber/NetworkMonitor" ~> 0.7.6
+github "supergithuber/NetworkMonitor" ~> 0.8.0
 ```
 
-#### Manual
+### Manual
 
 * drag WXNetworkMonitor.h & WXNetworkMonitor.m two files to your project.
 
