@@ -7,14 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 typedef void(^WXFPSMonitorBlock)(float fps);
 
 @interface WXFPSMonitor : NSObject
 
+@property (nonatomic, copy) WXFPSMonitorBlock fpsBlock;
+
 + (instancetype)sharedInstance;
 
-- (void)startMonitor:(WXFPSMonitorBlock)block;
+- (void)startMonitor;
 - (void)stopMonitor;
 
 @end

@@ -19,6 +19,8 @@
 		C710DFF920F0BF3B005D1DAD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C710DFF820F0BF3B005D1DAD /* main.m */; };
 		C710E00220F0C025005D1DAD /* WXNetworkMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C710E00120F0C025005D1DAD /* WXNetworkMonitor.m */; };
 		C71FBB272109746B000000F7 /* WXFPSMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C71FBB262109746B000000F7 /* WXFPSMonitor.m */; };
+		C71FBB282109782D000000F7 /* WXFPSMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C71FBB262109746B000000F7 /* WXFPSMonitor.m */; };
+		C71FBB2921097832000000F7 /* WXFPSMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = C71FBB252109746B000000F7 /* WXFPSMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C7D78FB620F30827004C69C3 /* WXNetworkMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = C710E00020F0C025005D1DAD /* WXNetworkMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -147,6 +149,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C71FBB2921097832000000F7 /* WXFPSMonitor.h in Headers */,
 				C70ECA7920F30794009448A4 /* NetworkCardMonitor.h in Headers */,
 				C7D78FB620F30827004C69C3 /* WXNetworkMonitor.h in Headers */,
 			);
@@ -254,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C70ECA8220F3080F009448A4 /* WXNetworkMonitor.m in Sources */,
+				C71FBB282109782D000000F7 /* WXFPSMonitor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +316,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = NetworkCardMonitor/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,6 +344,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = NetworkCardMonitor/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

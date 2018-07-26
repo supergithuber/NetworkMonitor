@@ -17,3 +17,4 @@ FOUNDATION_EXPORT const unsigned char NetworkCardMonitorVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <NetworkCardMonitor/PublicHeader.h>
 
 #import <NetworkCardMonitor/WXNetworkMonitor.h>
+#import <NetworkCardMonitor/WXFPSMonitor.h>
