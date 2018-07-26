@@ -40,7 +40,7 @@ transform units according to you.
 ### carthage 
 
 ```
-github "supergithuber/iOSDeviceMonitor" ~> 0.8.0
+github "supergithuber/iOSDeviceMonitor" ~> 0.8.1
 ```
 
 ### Manual
@@ -49,4 +49,4 @@ github "supergithuber/iOSDeviceMonitor" ~> 0.8.0
 
 or
 
-* drag framework NetworkCardMonitor.framework to your project
+* drag framework iOSMonitor.framework to your project
